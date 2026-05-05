@@ -145,21 +145,27 @@
 
 -- ## TABELA RESUMO:
 
-SELECT
- COUNT(DISTINCT(IdCliente))  as qtdeClientes,
-  SUM(
-    CASE 
-      WHEN QtdePontos > 0 THEN qtdePontos
-    END) AS QtPontosPositivos,
+--SELECT
+ --COUNT(DISTINCT(IdCliente))  as qtdeClientes,
+  --SUM(
+    --CASE 
+      --WHEN QtdePontos > 0 THEN qtdePontos
+    --END) AS QtPontosPositivos,
 
-    SUM(
-      CASE 
-        WHEN QtdePontos < 0 THEN qtdePontos
-      END) AS QtPontosNegativos,
+    --SUM(
+      --CASE 
+        --WHEN QtdePontos < 0 THEN QtdePontos
+      --END) AS QtPontosNegativos,
 
-    ROUND(AVG(
-      CASE 
-        WHEN QtdePontos > 0 THEN qtdePontos
-      END), 2) AS MediaPontosPositivos
-FROM  transacoes
-WHERE substr(DtCriacao, 1,7) BETWEEN '2025-07' AND '2025-07'
+    --ROUND(AVG(
+     -- CASE 
+       -- WHEN QtdePontos > 0 THEN QtdePontos
+      --END), 2) AS MediaPontosPositivos,
+
+    --ROUND(AVG(  
+      --CASE
+        --WHEN QtdePontos < 0 THEN QtdePontos
+      --END), 2) AS MediaPontosNegativos
+      
+--FROM  transacoes
+--WHERE substr(DtCriacao, 1,7) BETWEEN '2025-07' AND '2025-07'
