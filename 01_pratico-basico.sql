@@ -253,3 +253,15 @@
 -- JOIN pragma_table_info(t.name) c
 -- WHERE t.type = 'table'
 -- ORDER BY t.name, c.cid;
+
+-- ## QUAL CLIENTE JUNTOU MAIS PONTOS POSITIVOS EM 2025-05?
+SELECT
+  idCliente,
+  STRFTIME('%Y-%m', DATE(DtCriacao)) AS dt_ym,
+  SUM(QtdePontos) AS qt_pontos_clientes
+FROM transacoes
+WHERE STRFTIME('%Y-%m', DATE(DtCriacao)) LIKE '%05%'
+GROUP BY idCliente, dt_ym
+HAVING SUM(QtdePontos) > 0
+ORDER BY qt_pontos_clientes DESC
+LIMIT 1;
