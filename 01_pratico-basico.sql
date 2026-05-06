@@ -169,3 +169,16 @@
       
 --FROM  transacoes
 --WHERE substr(DtCriacao, 1,7) BETWEEN '2025-07' AND '2025-07'
+
+-- ## LISTA DE QUANTIDADE DE TRANSAÇÕES DE PRESENTES:
+-- ### Identificar na tabela produto qual é o id do produto "Presente" e depois contar a quantidade de transações com esse produto:
+
+-- SELECT *
+-- FROM produtos
+-- WHERE DescNomeProduto LIKE '%Pres%';
+
+SELECT count(*) as qtdeTransacoesPresente
+FROM transacao_produto
+-- WHERE IdTransacao = '11';
+
+
